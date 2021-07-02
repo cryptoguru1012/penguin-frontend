@@ -50,7 +50,7 @@ const DetailsButton = styled(Button).attrs({ variant: 'text', fullWidth: true })
 `
 
 const InfoBlock = styled.div`
-  padding: 16px 24px 24px;
+  padding: 0 24px 24px;
 
   p {
     text-align: center;
@@ -83,6 +83,10 @@ const PGCardBody = styled(CardBody)`
   justify-content: center;
   padding: 8px 0 12px;
 `;
+
+const ComingSoonWrapper = styled('div')`
+  text-align: center;
+`
 
 const NftCard: React.FC<NftCardProps> = ({ nft, onSuccess, canClaim = false, tokenIds = [] }) => {
   const [isOpen, setIsOpen] = useState(false)
@@ -136,9 +140,11 @@ const NftCard: React.FC<NftCardProps> = ({ nft, onSuccess, canClaim = false, tok
             <Text as="p" color="textSubtle">
               {description}
             </Text>
-            <Text as="p" color="primary" mt='8px'>
-              Coming Soon
-            </Text>
+            <ComingSoonWrapper>
+              <Button scale='sm' disabled>
+                {TranslateString(292, 'Coming Soon')}
+              </Button>
+            </ComingSoonWrapper>
           </InfoBlock>
         )}
       </Footer>
