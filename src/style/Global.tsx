@@ -21,6 +21,8 @@ const GlobalStyle = createGlobalStyle`
       height: auto;
       max-width: 100%;
     }
+    padding-bottom: 10px;
+    overflow: no-content;
   }
 `
 
